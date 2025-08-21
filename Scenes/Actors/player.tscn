@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnwi6osj5iuwg"]
+
+[ext_resource type="Texture2D" uid="uid://movm16vnc47n" path="res://Assets/Actor/Characters/MaskFrog/SpriteSheet.png" id="1_na1so"]
+[ext_resource type="Script" path="res://Scripts/Actors/player.gd" id="1_wulyc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kxvk"]
+atlas = ExtResource("1_na1so")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyuab"]
+atlas = ExtResource("1_na1so")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iux6o"]
+atlas = ExtResource("1_na1so")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7uqm"]
+atlas = ExtResource("1_na1so")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i6okv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kxvk")
+}],
+"loop": true,
+"name": &"BackIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyuab")
+}],
+"loop": true,
+"name": &"FrontIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iux6o")
+}],
+"loop": true,
+"name": &"LeftIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7uqm")
+}],
+"loop": true,
+"name": &"RightIdle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kr73p"]
+radius = 7.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_wulyc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_i6okv")
+animation = &"LeftIdle"
+autoplay = "FrontIdle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kr73p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
