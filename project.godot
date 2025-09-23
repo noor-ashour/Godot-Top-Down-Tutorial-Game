@@ -13,7 +13,7 @@ config_version=5
 config/name="Tutorial Game #4 - Zelda"
 config/tags=PackedStringArray("tutorials")
 run/main_scene="res://Scenes/Main.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [input]
@@ -48,6 +48,7 @@ Right={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="Decoration"
+2d_physics/layer_4="PickUpItem"
 
 [rendering]
 

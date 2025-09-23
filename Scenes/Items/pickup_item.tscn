@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://chjxjfnnvfqfm"]
+
+[ext_resource type="Script" uid="uid://c37tldlmlh7ta" path="res://Scripts/Items/pickup_item.gd" id="1_3cdwf"]
+[ext_resource type="Texture2D" uid="uid://cysuja0fok16a" path="res://Assets/Backgrounds/Items/Treasure/GoldCoin.png" id="2_fv6p2"]
+[ext_resource type="Resource" uid="uid://dxu76qvts76qb" path="res://Resources/GoldCoin/gold_coin.tres" id="2_vwh0y"]
+[ext_resource type="Shape2D" uid="uid://bl3scgxv47djk" path="res://Resources/GoldCoin/gold_coin_collision_shape.tres" id="3_ws8k0"]
+
+[node name="PickUpItemArea" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_3cdwf")
+inventory_item = ExtResource("2_vwh0y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fv6p2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource("3_ws8k0")

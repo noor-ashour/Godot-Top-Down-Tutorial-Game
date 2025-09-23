@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://ba7d8x75tbwde"]
+[gd_scene load_steps=4 format=4 uid="uid://ba7d8x75tbwde"]
 
 [ext_resource type="TileSet" uid="uid://cicm5rqb71tpa" path="res://Assets/Tilesets/WaterTileset.tres" id="1_2k3lx"]
 [ext_resource type="PackedScene" uid="uid://cnwi6osj5iuwg" path="res://Scenes/Actors/player.tscn" id="2_btst0"]
+[ext_resource type="PackedScene" uid="uid://chjxjfnnvfqfm" path="res://Scenes/Items/pickup_item.tscn" id="3_kln2b"]
 
 [node name="Main" type="Node"]
 
@@ -18,3 +19,6 @@ tile_set = ExtResource("1_2k3lx")
 
 [node name="Player" parent="." instance=ExtResource("2_btst0")]
 position = Vector2(366, -106)
+
+[node name="PickUpItemArea" parent="." instance=ExtResource("3_kln2b")]
+position = Vector2(290, -99)
