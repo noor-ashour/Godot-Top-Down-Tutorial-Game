@@ -3,6 +3,7 @@ extends Area2D
 class_name PickUpItem
 
 @export var inventory_item: InventoryItem
+@export var stacks: int = 1
 
 @onready var sprite_2d = $Sprite2D
 @onready var collision_shape_2d = $CollisionShape2D

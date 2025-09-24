@@ -59,7 +59,6 @@ offset_right = -7.0
 offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "12"
 
 [node name="NameLabel" type="Label" parent="."]
 layout_mode = 2

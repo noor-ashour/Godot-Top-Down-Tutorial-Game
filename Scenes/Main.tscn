@@ -21,4 +21,13 @@ tile_set = ExtResource("1_2k3lx")
 position = Vector2(366, -106)
 
 [node name="PickUpItemArea" parent="." instance=ExtResource("3_kln2b")]
-position = Vector2(290, -99)
+position = Vector2(345, -84)
+stacks = 10
+
+[node name="PickUpItemArea2" parent="." instance=ExtResource("3_kln2b")]
+position = Vector2(324, -69)
+stacks = 11
+
+[node name="PickUpItemArea3" parent="." instance=ExtResource("3_kln2b")]
+position = Vector2(311, -96)
+stacks = 80

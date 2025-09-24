@@ -1,9 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://cnwi6osj5iuwg"]
+[gd_scene load_steps=28 format=3 uid="uid://cnwi6osj5iuwg"]
 
 [ext_resource type="Texture2D" uid="uid://movm16vnc47n" path="res://Assets/Actor/Characters/MaskFrog/SpriteSheet.png" id="1_na1so"]
 [ext_resource type="Script" uid="uid://cvttwf0cd1uhq" path="res://Scripts/Actors/player.gd" id="1_wulyc"]
 [ext_resource type="Script" uid="uid://cjsrsokage1u" path="res://Scripts/Actors/player_animation_controller.gd" id="3_87pht"]
 [ext_resource type="Shape2D" uid="uid://ctxqjd0stbe1w" path="res://Resources/Player/player_collision_shape.tres" id="4_mqoqv"]
+[ext_resource type="Script" uid="uid://doq4i00ij8qku" path="res://Scripts/UI/Inventory/inventory.gd" id="5_sfcrp"]
+[ext_resource type="PackedScene" uid="uid://brah3q8flc67r" path="res://Scenes/UI/inventory_ui.tscn" id="6_b2ja5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kxvk"]
 atlas = ExtResource("1_na1so")
@@ -210,5 +212,11 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpItemArea"]
 shape = ExtResource("4_mqoqv")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("5_sfcrp")
+
+[node name="InventoryUI" parent="Inventory" instance=ExtResource("6_b2ja5")]
+visible = false
 
 [connection signal="area_entered" from="PickUpItemArea" to="." method="_on_pick_up_item_area_area_entered"]

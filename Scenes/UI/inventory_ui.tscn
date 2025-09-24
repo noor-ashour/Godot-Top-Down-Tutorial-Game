@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://brah3q8flc67r"]
+
+[ext_resource type="Script" uid="uid://c0pyjymuuucp" path="res://Scripts/UI/Inventory/inventory_ui.gd" id="1_p83af"]
+[ext_resource type="Texture2D" uid="uid://chyjul601mcmj" path="res://Assets/Ui/Dialog/DialogBoxFaceset.png" id="2_o62ck"]
+[ext_resource type="FontFile" uid="uid://bhdlv44mey7qu" path="res://Assets/Ui/Font/NormalFont.ttf" id="3_sfqc8"]
+
+[sub_resource type="Theme" id="Theme_kyjlm"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("3_sfqc8")
+
+[node name="InventoryUI" type="CanvasLayer"]
+script = ExtResource("1_p83af")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.380392)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_o62ck")
+region_rect = Rect2(49.0748, 10.5908, 248.297, 44.4967)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_kyjlm")
+theme_override_font_sizes/font_size = 64
+text = "Inventory Text"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
