@@ -1,0 +1,10 @@
+player: Hello!
+player: What's my  name?
+[style name="text_input"]
+[text_input text="Type a name!" var="playerName" placeholder="???"]
+[style name="default_style"]
+if {playerName} == "Joe":
+	player: Joe mama! HAH!
+	player: I got you good, didn't I??
+else:
+	player: Cool!
